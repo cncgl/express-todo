@@ -10,7 +10,7 @@ var sequelize = new Sequelize('hello_phoenix_dev', 'postgres', 'postgres',
     { host: 'localhost', dialect: 'postgres', pool: { max:5, min:0, idle:10000} });
 
 var Todo = sequelize.define('todos', {
-        id: {type: Sequelize.INTEGER, primaryKey: true},
+        id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
         status: {type: Sequelize.BOOLEAN, allowNull: false},
         title: {type: Sequelize.STRING, allowNull: false}
     }, {
@@ -21,7 +21,7 @@ var Todo = sequelize.define('todos', {
 /* GET todos listing. */
 router.get('/', function(req, res, next) {
     //res.send('index');
-    Todo.findAll().then(function(todos) {
+    Todo.findAll({ order: [['id', 'ASC']] }).then(function(todos) {
         res.json(todos);
     });
 
@@ -49,24 +49,46 @@ router.get('/', function(req, res, next) {
     */
 });
 
+
+function update(req, res, next) {
+    Todo.findById(req.params.id).then(function(todo) {
+        todo.update({
+            status: req.body.status,
+            title:  req.body.title
+        }).then(function(todo) {
+            res.json(todo);
+        });
+    });
+}
+
 router.get('/:id', function(req, res, next) {
-    res.send('show:'+req.params.id);
+    //res.send('show:'+req.params.id);
+    Todo.findById(req.params.id).then(function(todo) {
+        res.json(todo);
+    });
 });
 
 router.post('/', function(req, res, next) {
-    res.send('create');
+    //res.send('create');
+    console.log(req.body);
+    Todo.create({
+        status: req.body.status,
+        title:  req.body.title
+    }).then(function(todo) {
+        res.json(todo);
+    });
 });
 
-router.put('/:id', function(req, res, next) {
-    res.send('update(put)'+req.params.id);
-});
+router.put('/:id', update);
 
-router.patch('/:id', function(req, res, next) {
-    res.send('update(patch)'+req.params.id);
-});
+router.patch('/:id', update);
 
 router.delete('/:id', function(req, res, next) {
-    res.send('delete:'+req.params.id);
+    //res.send('delete:'+req.params.id);
+    Todo.findById(req.params.id).then(function(todo) {
+        todo.destroy();
+        res.status(204).send('');
+    });
 });
 
 
