@@ -1,0 +1,9 @@
+{
+  "database": {
+    "name": "hello_phoenix_dev",
+    "user": "postgres",
+    "pass": "postgres",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "database": {
+    "name": "sample_test",
+    "user": "username",
+    "pass": "password",
+    "host": "localhost",
+    "dialect": "sqlite",
+    "storage": "./sample_test.sqlite"
+  }
+}

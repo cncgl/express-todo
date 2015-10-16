@@ -1,13 +1,20 @@
 /**
  * Created by shigeru on 15/09/16.
  */
+var config = require('config');
 var express = require('express');
 var router = express.Router();
 //var pg = require('pg');
 //var conString = 'postgres://postgres:postgres@localhost/hello_phoenix_dev';
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('hello_phoenix_dev', 'postgres', 'postgres',
-    { host: 'localhost', dialect: 'postgres', pool: { max:5, min:0, idle:10000} });
+// var sequelize = new Sequelize('hello_phoenix_dev', 'postgres', 'postgres',
+//     { host: 'localhost', dialect: 'postgres', pool: { max:5, min:0, idle:10000} });
+var sequelize = new Sequelize(config.database.name, config.database.user, config.database.password,
+    {
+        host: config.database.host, dialect: config.database.dialect,
+        pool: { max:5, min:0, idle:10000},
+        storage: config.database.storage
+    });
 
 var Todo = sequelize.define('todos', {
         id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
