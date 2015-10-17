@@ -1,12 +1,19 @@
 # express-todo
 Todo Application on Express and Sequelize
 
+## Preparation
+
+Install PostgreSQL 9.x and create user: postgres with password: postgres.
+And create database: sample_dev.
+
+
 ## Install
 ```
 $ npm i
+$ npm run migrate
 ```
 
-## How to use
+## Usage
 ```
 $ npm start
 ```
