@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/cncgl/electron-todo/badges/gpa.svg)](https://codeclimate.com/github/cncgl/electron-todo)
+
 # express-todo
 Todo Application on Express and Sequelize
 
