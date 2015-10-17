@@ -18,6 +18,11 @@ $ npm run migrate
 $ npm start
 ```
 
+## Test
+```
+$ npm test
+```
+
 ## API
 index
 ```
