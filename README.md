@@ -1,6 +1,10 @@
-[![Code Climate](https://codeclimate.com/github/cncgl/electron-todo/badges/gpa.svg)](https://codeclimate.com/github/cncgl/electron-todo)
-
 # express-todo
+
+[![Code Climate](https://codeclimate.com/github/cncgl/express-todo/badges/gpa.svg)](https://codeclimate.com/github/cncgl/express-todo)
+[![Issue Count](https://codeclimate.com/github/cncgl/express-todo/badges/issue_count.svg)](https://codeclimate.com/github/cncgl/express-todo)
+[![Dependency Status](https://gemnasium.com/cncgl/express-todo.svg)](https://gemnasium.com/cncgl/express-todo)
+
+
 Todo Application on Express and Sequelize
 
 ## Preparation
