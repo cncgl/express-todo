@@ -1,9 +1,0 @@
-{
-  "database": {
-    "name": "sample_dev",
-    "user": "postgres",
-    "password": "postgres",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  }
-}

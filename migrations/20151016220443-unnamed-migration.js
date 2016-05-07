@@ -30,7 +30,7 @@ module.exports = {
             }
         }
     );
-
+    done();
   },
 
   down: function (queryInterface, Sequelize) {
@@ -41,5 +41,8 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
+    return new Promise(function(resolve, reject) {
+      resolve();
+    });
   }
 };

@@ -2,23 +2,19 @@
   "development": {
     "username": "postgres",
     "password": "postgres",
-    "database": "sample_dev",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "database": "express_todo_development",
+    "host":     "127.0.0.1",
+    "dialect":  "postgres"
   },
   "test": {
-    "username": "username",
-    "password": "password",
-    "database": "sample_test",
-    "host": "127.0.0.1",
-    "dialect": "sqlite",
-    "storage": "./sample_test.sqlite"
+    "username": "user",
+    "password": "pass",
+    "database": "express_todo_test",
+    "host":     "127.0.0.1",
+    "dialect":  "sqlite",
+    "storage":  "./express_todo_test.sqlite"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "use_env_variable": "DB_CONNECTION_STRING"
   }
 }

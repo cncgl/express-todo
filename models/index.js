@@ -5,6 +5,7 @@ var path      = require('path');
 var Sequelize = require('sequelize');
 var basename  = path.basename(module.filename);
 var env       = process.env.NODE_ENV || 'development';
+// node-config を使わず、 sequelize init で生成される config.json を使用する。
 var config    = require(path.join(__dirname, '/../config/config.json'))[env];
 var db        = {};
 
