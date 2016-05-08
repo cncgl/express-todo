@@ -12,7 +12,14 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-    done();
+    queryInterface.bulkInsert('todos', [{
+      status: false,
+      title: 'Meeting'
+    },{
+      status: false,
+      title: 'Shopping'
+    }], {});
+    // done();
   },
 
   down: function (queryInterface, Sequelize) {
@@ -23,8 +30,11 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */
+    /*
     return new Promise(function(resolve, reject) {
       resolve();
     });
+    */
+    // done();
   }
 };

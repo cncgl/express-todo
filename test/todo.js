@@ -7,21 +7,22 @@ describe('todos', function() {
 
   it('posts an object', function(done) {
     request(app)
-      .post('http://localhost:3000/api/todos')
+      .post('/api/todos')
       .send({ status: false, title: 'meeting' })
       .end(function(err, res) {
-        console.log(res.body);
+        // console.log(res.body);
         expect(err).to.eql(null);
         id = res.body.id;
-        console.log('id:'+id);
+        // console.log('id:'+id);
         done();
       });
   });
 
   it('retrieves an object', function(done) {
     request(app)
-      .get('http://localhost:3000/api/todos/'+id)
+      .get('/api/todos/'+id)
       .end(function(err, res) {
+        // console.log(res);
         expect(err).to.eql(null);
         expect(res.body.status).to.eql(false);
         done();
@@ -30,9 +31,9 @@ describe('todos', function() {
 
   it('retrieves a collection', function(done) {
     request(app)
-      .get('http://localhost:3000/api/todos')
+      .get('/api/todos')
       .end(function(err, res) {
-        console.log(res.body);
+        // console.log(res.body);
         expect(res.body[res.body.length-1].id).to.eql(id);
         done();
       });
@@ -40,10 +41,10 @@ describe('todos', function() {
 
   it('updates an object', function(done) {
     request(app)
-      .put('http://localhost:3000/api/todos/'+id)
+      .put('/api/todos/'+id)
       .send({ status: true, title: 'movie' })
       .end(function(err, res) {
-        console.log(res.body);
+        // console.log(res.body);
         expect(res.body.id).to.eql(id);
         expect(res.body.status).to.eql(true);
         done();
@@ -52,7 +53,7 @@ describe('todos', function() {
 
   it('checks an updated object', function(done) {
     request(app)
-      .get('http://localhost:3000/api/todos/'+id)
+      .get('/api/todos/'+id)
       .end(function(err, res) {
         expect(err).to.eql(null);
         expect(res.body.status).to.eql(true);
@@ -62,9 +63,9 @@ describe('todos', function() {
 
   it('removes an object', function(done) {
     request(app)
-      .del('http://localhost:3000/api/todos/'+id)
+      .del('/api/todos/'+id)
       .end(function(err, res) {
-        console.log(res.body);
+        // console.log(res.body);
         expect(err).to.eql(null);
         done();
       })

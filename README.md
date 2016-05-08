@@ -10,7 +10,7 @@ Todo Application on Express and Sequelize
 ## Preparation
 
 Install PostgreSQL 9.x and create user: postgres with password: postgres.
-And create database: sample_dev.
+And create database: express_todo_development.
 
 
 ## Install
