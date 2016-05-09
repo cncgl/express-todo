@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "migrate": "$(npm bin)/sequelize --env=test db:migrate && $(npm bin)/sequelize --env=development db:migrate",
+    "migrate": "$(npm bin)/sequelize db:migrate",
     "seed": "$(npm bin)/sequelize --env=test db:migrate && $(npm bin)/sequelize --env=test db:seed:all",
     "start": "node ./bin/www",
     "test": "$(npm bin)/mocha ./test/todo.js"

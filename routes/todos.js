@@ -8,10 +8,12 @@ var config    = require(path.join(__dirname, '/../config/config.json'))[env];
 var express   = require('express');
 var router    = express.Router();
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize(config.database,
-  config.username,
-  config.password,
-  config);
+var sequelize;
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable]);
+} else {
+  sequelize = new Sequelize(config.database, config.username, config.password, config);
+}
 
 var Todo = sequelize.define('todos',
   {
