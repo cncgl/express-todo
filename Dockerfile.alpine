@@ -1,0 +1,17 @@
+# build with build-args. like
+# docker build -f ./Dockerfile.alpine --build-arg DB_CONNECTION_STRING="<YOUR_DATABASE_CONNCTION_STRING>" -t <image_name> .
+FROM alpine:3.3
+ARG DB_CONNECTION_STRING
+WORKDIR /root/express
+RUN apk add --update --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ tini
+# RUN apk update
+RUN apk add nodejs curl
+RUN rm -rf /var/cache/apk/*
+ENV NODE_ENV production
+ENV DB_CONNECTION_STRING ${DB_CONNECTION_STRING}
+COPY . /root/express
+RUN npm i
+RUN npm run migrate
+EXPOSE 3000
+
+CMD ["tini", "--", "npm", "start"]
