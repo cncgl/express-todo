@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/cncgl/express-todo.svg?branch=master)](https://travis-ci.org/cncgl/express-todo)
 [![Code Climate](https://codeclimate.com/github/cncgl/express-todo/badges/gpa.svg)](https://codeclimate.com/github/cncgl/express-todo)
 [![Issue Count](https://codeclimate.com/github/cncgl/express-todo/badges/issue_count.svg)](https://codeclimate.com/github/cncgl/express-todo)
-[![Dependency Status](https://gemnasium.com/cncgl/express-todo.svg)](https://gemnasium.com/cncgl/express-todo)
-
+[![Dependency Status](https://david-dm.org/cncgl/express-todo.svg)](https://david-dm.org/cncgl/express-todo)
+[![devDependency Status](https://david-dm.org/cncgl/express-todo/dev-status.svg)](https://david-dm.org/cncgl/express-todo#info=devDependencies)
 
 Todo Application on Express and Sequelize
 
